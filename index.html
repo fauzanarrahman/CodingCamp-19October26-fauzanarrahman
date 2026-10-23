@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard (Dasbor Kehidupan)</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="container">
+
+        <section class="card greeting" aria-labelledby="greeting-text">
+            <div class="topbar">
+                <button id="theme-toggle" class="btn btn-secondary" type="button" aria-pressed="false">🌙 Mode Gelap</button>
+            </div>
+            <div id="clock" class="clock" aria-live="off">00:00:00</div>
+            <div id="date" class="date"></div>
+            <h1 id="greeting-text" class="greeting-text">Selamat datang</h1>
+        </section>
+
+        <section class="card" aria-labelledby="timer-heading">
+            <h2 id="timer-heading">Focus Timer</h2>
+            <div id="timer" class="timer" role="timer">25:00</div>
+            <p id="timer-message" class="message success" role="status" hidden>Sesi fokus selesai! Saatnya istirahat sejenak.</p>
+            <div class="btn-row">
+                <button id="timer-start" class="btn" type="button">Mulai</button>
+                <button id="timer-stop" class="btn btn-secondary" type="button">Berhenti</button>
+                <button id="timer-reset" class="btn btn-secondary" type="button">Reset</button>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="todo-heading">
+            <h2 id="todo-heading">To-Do List</h2>
+            <form id="task-form" class="inline-form" novalidate>
+                <input id="task-input" type="text" placeholder="Tambah tugas baru..." maxlength="120" aria-label="Tugas baru">
+                <button type="submit" class="btn">Tambah</button>
+            </form>
+            <p id="task-error" class="message error" role="alert" hidden></p>
+            <div class="sort-row">
+                <label for="sort-select">Urutkan</label>
+                <select id="sort-select">
+                    <option value="creation">Urutan dibuat</option>
+                    <option value="status">Status (belum selesai dulu)</option>
+                </select>
+            </div>
+            <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <section class="card" aria-labelledby="links-heading">
+            <h2 id="links-heading">Quick Links</h2>
+            <form id="link-form" class="inline-form stack" novalidate>
+                <input id="link-name" type="text" placeholder="Nama tautan" maxlength="30" aria-label="Nama tautan">
+                <input id="link-url" type="text" placeholder="https://contoh.com" aria-label="URL tautan">
+                <button type="submit" class="btn">Tambah</button>
+            </form>
+            <p id="link-error" class="message error" role="alert" hidden></p>
+            <div id="link-list" class="link-list"></div>
+        </section>
+
+    </main>
+    <script src="./js/app.js"></script>
+</body>
+</html>
